@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arithmetic Operation in Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: teal; /* Light green background */
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffc0cb; /* Pink rectangular form */
+        }
+        input[type="number"] {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px; /* Arrange buttons in columns */
+        }
+        button {
+            flex: 1; /* Equal width for all buttons */
+            padding: 10px;
+            background-color: #1e90ff; /* Blue buttons */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1 style="color: white; text-align: center;">Arithmetic Operation in Form</h1>
+<div class="container">
+    <form id="arithmeticForm">
+        <label for="firstNo">Enter First No:</label>
+        <input type="number" id="firstNo" required>
+        <label for="secondNo">Enter Second No:</label>
+        <input type="number" id="secondNo" required>
+        <div class="button-container">
+            <button type="button" onclick="add()">Add</button>
+            <button type="button" onclick="sub()">Subtract</button>
+            <button type="button" onclick="mul()">Multiply</button>
+            <button type="button" onclick="div()">Divide</button>
+            <button type="button" onclick="resetForm()">Reset</button>
+        </div>
+        <p id="result">Your Answer:</p>
+    </form>
+</div>
+
+<script>
+    function add() {
+        const first = parseFloat(document.getElementById("firstNo").value);
+        const second = parseFloat(document.getElementById("secondNo").value);
+        document.getElementById("result").textContent = `Your Answer: ${first + second}`;
+    }
+
+    function sub() {
+        const first = parseFloat(document.getElementById("firstNo").value);
+        const second = parseFloat(document.getElementById("secondNo").value);
+        document.getElementById("result").textContent = `Your Answer: ${first - second}`;
+    }
+
+    function mul() {
+        const first = parseFloat(document.getElementById("firstNo").value);
+        const second = parseFloat(document.getElementById("secondNo").value);
+        document.getElementById("result").textContent = `Your Answer: ${first * second}`;
+    }
+
+    function div() {
+        const first = parseFloat(document.getElementById("firstNo").value);
+        const second = parseFloat(document.getElementById("secondNo").value);
+        document.getElementById("result").textContent = `Your Answer: ${first / second}`;
+    }
+    function resetForm() {
+        document.getElementById("arithmeticForm").reset();
+        document.getElementById("result").textContent = "Your Answer:";
+    }
+</script>
+</body>
+</html>
