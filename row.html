@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Row Homework</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+  <body style="background: teal">
+  <div class="container mt-5">
+    <h2 style="color: #FFFFFF">Add Row Homework</h2>
+    <br>
+    <br>
+    <table id="nomineeTable" class="table table-bordered" style="background: #FFFFFF">
+      <thead>
+      <tr>
+        <th>Name of Nominee</th>
+        <th>Relation with Nominee</th>
+        <th>Nominee NID/Birth Certificate</th>
+        <th>Nominee's Mobile Number</th>
+
+        <td><button onclick="addRow()" class="btn btn-success btn-sm">+</button></td>
+      </tr>
+      </thead>
+
+      <tbody></tbody>
+    </table>
+  </div>
+
+    <script type='text/javascript'>
+      function addRow() {
+        var table = document.getElementById("nomineeTable").getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow(table.length);
+
+        cell1 = newRow.insertCell(0);
+        cell1.innerHTML = "<input type='text' class='form-control'>";
+
+        cell2 = newRow.insertCell(1);
+        cell2.innerHTML = "<input type='text' class='form-control'>";
+
+        cell3 = newRow.insertCell(2);
+        cell3.innerHTML = "<input type='text' class='form-control'>";
+
+        cell4 = newRow.insertCell(3);
+        cell4.innerHTML = "<input type='text' class='form-control'>";
+
+        // Delete Button
+        cell5 = newRow.insertCell(4);
+        cell5.innerHTML =
+                "<button onclick=\"deleteRow(this)\" class=\"btn btn-danger btn-sm\">x</button>";
+      }
+
+      function deleteRow(button) {
+        var rowDelete= button.parentNode.parentNode;
+        rowDelete.parentNode.removeChild(rowDelete);
+      }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
